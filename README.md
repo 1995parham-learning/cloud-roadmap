@@ -1,2 +1,401 @@
-# cloud-roadmap
-I want to be a cloud engineer too :dancer:
+# Cloud Roadmap
+
+## Difficulty
+
+- a: Basic, concept (a 1st year CS student can learn )
+- b: Intermediate (a fresh CS graduate can learn)
+- c: Advanced topic
+- d: Expert
+
+<https://www.karanpratapsingh.com/courses/system-design>
+
+## Concepts
+
+### Golang
+
+- syntax go tour XXX
+  - [https://go.dev/tour/welcome/1](https://go.dev/tour/welcome/1)
+  - [https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ](https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ)
+- Concurrency (b)
+  - Goroutines (b)
+  - Mutex (b)
+  - Channels (b)
+  - Context (b)
+- HTTP
+  - client net/http (b)
+    - request
+      - set header
+      - set query param
+      - custom client
+        - custom timeout
+        - httptrace
+        - custom transport
+          - skip tls verify
+      - dump response
+  - Server
+    - net/http
+    - mux
+    - [echo](https://echo.labstack.com/)
+      - Advanced mux
+      - Group register
+      - Middlewares
+        - JWT
+        - Prometheus
+- JSON marshal/unmarshal
+- Config Management (viper/koanf/pflag)
+  - env
+  - yaml/json/toml
+- CLI (cobra)
+  - subcommands
+  - flags
+- gRPC (d)
+  - Protobuf
+  - code generation
+  - interceptors
+    - prometheus
+    - log
+- Databases
+  - Gorm
+  - Atlas
+  - client redis
+  - client mysql
+  - client mongo
+  - client etcd
+- Testing
+  - Unit testing
+  - BDD
+    - [gingko](https://github.com/onsi/ginkgo)
+    - [gomega](https://github.com/onsi/gomega)
+- Jaeger tracing (d)
+- Prometheus Exporter SDK
+
+### Kubernetes
+
+- Kubernetes SDK
+  - [https://github.com/kubernetes/apimachinery](https://github.com/kubernetes/apimachinery)
+  - [https://github.com/kubernetes/client-go](https://github.com/kubernetes/client-go)
+  - informers
+- Controller / Operator
+  - controller-runtime
+  - kubebuilder
+  - operator-sdk
+  - reconcile loop
+  - k8s error checking
+  - Finalizer
+  - status
+  - printable columns
+  - default values / validations (tags)
+- Admission / Mutation Webhook
+- tests
+  - k8s envtest
+
+### Network
+
+- To read: Networking warrior(first 12 chapters), Networking for Systems Administrators (IT Mastery)
+- [The complete flow of entering a URL in your browser](https://github.com/alex/what-happens-when#tls-handshake)
+- OSI layers (a)
+  - L1:
+    - hub
+  - L2:
+    - mac (a)
+    - vlan (b)
+      - [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/) \-> such a brain friendly way of learning the fundamentals of network.
+      -
+    - vrrp (b)
+    - arp (a)
+  - L3
+    - sub-netting, gw (a)
+    - ip classes (A,B,C) private/public (a)
+    - localhost (a)
+    - link local (b)
+    - Routing protocol (a)
+      - routing table (a)
+      - OSPF (b)
+      - BGP (c)
+        - iBGP, eBGP (c)
+        - BGP params (d)
+        - BGP loop prevention mechanism (d)
+        - BGP communities (d)
+  - L4
+    - TCP handshake (a)
+    - NAT (a)
+    - TCP flow (b)
+    - VxLAN
+      - [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/#VXLAN) \-> such a brain friendly way of learning the fundamentals of network.
+    - L5
+    - TLS handshake
+      - asymmetric crypto (a) somehow
+      - digital signature (a)
+      - CA and verification (a)
+      - SNI (c)
+      - ALPN (c)
+    - L6
+    - L7
+    - HTTP (a)
+      - GET/POST/..
+      - headers
+      - URI, path, query parameter
+      - CORS (c)
+    - HTTP2 (b)
+    - gRPC (c)
+    - DNS (a)
+      - recursive resolution
+      - records: A,AAAA, CNAME
+- Network bonding
+  - 0, 1 (b)
+  - 4 lacp 802.3ad (c)
+- Packet NIC flow (d)
+  - dram
+  - ring buffer
+  - driver
+  - XDP
+- MPLS (d)
+- FRR (d)
+- VRF (d)
+
+### Linux
+
+- TODO: add lpic topic + linuxfun
+- systemd (a)
+- iptables [https://iximiuz.com/en/posts/laymans-iptables-101/](https://iximiuz.com/en/posts/laymans-iptables-101/)
+- eBPF (d)
+- Netfilter
+  - vrf (d)
+  - route tables, pbr (c)
+  - route (b)
+  - netns (b)
+  - veth pair (b)
+  - bridge (b)
+  - vlan aware bridge (c)
+  - 802.1q (c)
+- namespaces
+  - nsenter
+  - lsns
+  - types:
+    - mnt
+    - pid
+    - net
+    - ipc
+    - uts
+    - user
+    - cgroup
+    - time
+- cgroups (c)
+  - cgroupv1 vs cgroupv2 (d)
+- kexec (d)
+- io_urun (d)
+- storage
+  - lvm
+    - pv
+    - vg
+- file
+  - ACL
+  - UID, GID
+  - SELinux ls -Z
+- Docker
+
+  - Great resource for introduction to the container underlying concepts-> [Cgroups, namespaces, and beyond: what are containers made from?](https://www.youtube.com/watch?v=sK5i-N34im8)
+  - [How containers work by Julia Evans](http://library.lol/main/7DD600362F75F773B82D0736D18D383B)
+  - dockerfile (a)
+    - multi-stage (b)
+    - dockerignore (b)
+    - distroless, scratch, alpine, slim (b)
+    - CoW (a)
+    - Caching (b) --
+  - components: not
+    - docker daemon
+    - http api
+    - buildx
+    - runc
+    - containerd
+  - network types
+    - bridge
+    - none
+    - host
+    - ipip
+    - mcvlan
+  - volume
+    - readonly \`:ro\`
+    - \`:z\`
+  - compose:
+    - how compose works
+    - dns servicek
+
+- Kubernetes
+  - OKD:
+    - [CoreOS](https://cloud.redhat.com/blog/red-hat-enterprise-linux-coreos-customization)
+  - [The complete flow of creating a deployment](https://github.com/jamiehannaford/what-happens-when-k8s)
+  - Book: Kubernetes in action by Marka Luksa ( Part3 - especially chapter 11 understanding kubernetes internals )
+  - components (a)
+    - kubelet, scheduler, kube-proxy
+  - api
+    - api server
+      - authN
+      - authZ
+      - mutation
+        - what is it (b)
+        - objects in k8s (c)
+        - writing a custom webhook (c)
+      - admission
+        - what is it (b)
+        - object in k8s (c)
+        - writing a custom webhook (c)
+      - etcd watch
+      - api server watch
+      - controller pattern
+      - scheduling pipeline
+      - extension:
+        - AA
+        - CRD
+  - etcd:
+    - raft / consensus
+    - watch
+    - persistence
+    - why not redis?
+  - cri
+    - kubelet watch
+    - cri grpc call
+    - crio
+    - oci
+    - runc
+    - worklaod
+      - deployment, sts, daemonset (a)
+      - sts features (b)
+        - naming
+        - pvc per pod
+      - daemonset:
+        - no count
+        - not drain
+        - even if node restart ??
+    - probe
+      - liveness, readiness (a)
+      - startup probe (b)
+  - network:
+    - kube-proxy, service
+      - service (headless/none, clusterip, loadbalancer, node port, external name) (a)
+      - endpoint (b)
+      - endpointslice  (c)
+      - kube proxy iptables chains
+    - cni (b)
+      - cilium
+    - ingress controller (b)
+    - dns
+      - kubelet dns, dnsPolicy
+      - coredns: learning coredns book
+    - life of a packet North south
+    - life of a packet East West
+  - Csi:
+    - [Container Storage interface standard](https://github.com/container-storage-interface/spec/blob/master/spec.md) - this is the reference and standard not a very good resource for a newbie
+    - [How to write a Container Storage Interface (CSI) plugin](https://arslan.io/2018/06/21/how-to-write-a-container-storage-interface-csi-plugin/) - A thorough resource with easy to understand explanation
+    - Concepts:
+      - pv
+      - pvc
+      - provisioner
+      - driver
+      - a/d controller
+      - csi attacher/resizer/snapshotter
+      - Life of a PVC
+      - kubelet fsGroup policy
+      - kubelet selinux relabling
+      - inline csi ©
+- automation:
+  - concepts:
+    - reusable modules (roles, scripts, ...)
+    - idempotency (know the concept in rest but not in ansible)
+    - remote parallel execution
+    - inventory and discovery
+    - DSL
+  - Tools:
+    - Ansible
+      - roles (b)
+      - playbook (a)
+      - tasks (a)
+      - inventory (a)
+      - group vars(b)
+      - env (a)
+      - ansible.cfg (b)
+      - callbacks (d)
+      - plugins (c)
+      - dynamic inv (c)
+      - writing a module (d)
+      - ansible-galaxy (c)
+      - raw (c)
+      - handlers (c)
+      - jinja (b)
+    - Terraform (Terraform up and running)
+      - state (a)
+      - storage backend state (b)
+      - modules (b)
+      - locals, vs variables (b)
+      - state lock (b)
+      - production/staging (b)
+      - secrets (b)
+      - custom providers (c)
+      - writing providers (d)
+    - basic: saltstack, puppet
+- openshift
+  - Console
+    - Console customization
+    - Dynamic plugins
+
+[https://www.youtube.com/watch?v=55wgEmEY1o0](https://www.youtube.com/watch?v=55wgEmEY1o0)
+
+- Ceph
+
+[https://www.youtube.com/watch?v=7I9uxoEhUdY](https://www.youtube.com/watch?v=7I9uxoEhUdY)
+
+-       *   ceph cookbook
+- Openstack
+
+  - Networking:
+    - OVS
+      - [Networking in too much detail](https://www.rdoproject.org/networking/networking-in-too-much-detail/#the-players)
+    - OVN
+  - Introduction to openstack components through analogy ( Openstack bootcamp book by Vinoth Kumar - Chapter 2: Day 2 - Know Your Battalion)
+  - [Openstack instance creation flow](https://www.slideshare.net/mirantis/openstack-architecture-43160012) + [Redhat resource about the same topic](https://access.redhat.com/solutions/4019711) + Openstack bootcamp book by Vinoth Kumar - Chapter 4: Day4 - How stuff works
+  - Mastering openstack by Omar Khedmer
+    - Chapter12 - openstack benchmarking and performance tunning (describes using Rally for benchmarking control plane -especially the API- and it will also introduce Shaker for benchmarking data plane -the internal and external connection of instances-)
+
+- observability
+  - monitoring
+    - prometheus
+      - how it works
+      - scarping
+      - SD
+      - dynamic metrics/short lived
+      - promQL
+        - many-to-many matching on()
+        - group_lef
+        - irate
+      - recording rule
+      - alerting rule
+    - alertmanager
+    - prometheus HA
+      - federation
+      - thanos
+        - querier
+        - side-car
+    - exporters
+      - kind of metrics
+        - gauge
+        - counter
+- Logging
+  - [Loki](https://grafana.com/docs/loki/latest/)
+    - promtail
+    - logQL
+  - efk
+    - fluentbit
+    - fluented
+      - plugins
+        - input
+        - output
+        - process/flow
+- Tracing
+
+1. Following this tutorial on Prometheus and PromQL
+2. [https://iximiuz.com/en/series/learning-prometheus-and-promql/](https://iximiuz.com/en/series/learning-prometheus-and-promql/)
+3. Investigate helm/apps/argocd-complementary
+
+Further ideas to explore:
+
+1. Flow of security group creation in openstack
