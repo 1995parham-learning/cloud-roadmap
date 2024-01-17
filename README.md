@@ -132,9 +132,9 @@
     - L6
     - L7
     - HTTP (a)
-      - GET/POST/..
-      - headers
-      - URI, path, query parameter
+      - Methods (GET/POST/...)
+      - Headers
+      - URI, Path and Query parameter
       - CORS (c)
     - HTTP2 (b)
     - gRPC (c)
