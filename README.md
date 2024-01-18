@@ -134,7 +134,7 @@
 
 ### Linux
 
-- TODO: add lpic topic + linuxfun
+- TODO: add LPIC topic + LinuxFun
 - systemd (a)
 - iptables [https://iximiuz.com/en/posts/laymans-iptables-101/](https://iximiuz.com/en/posts/laymans-iptables-101/)
 - eBPF (d)
@@ -142,8 +142,8 @@
   - vrf (d)
   - route tables, pbr (c)
   - route (b)
-  - netns (b)
-  - veth pair (b)
+  - `netns` (b)
+  - `veth` pair (b)
   - bridge (b)
   - vlan aware bridge (c)
   - 802.1q (c)
@@ -181,12 +181,12 @@
     - CoW (a)
     - Caching (b) --
   - components: not
-    - docker daemon
-    - http api
-    - buildx
-    - runc
-    - containerd
-  - network types
+    - Docker Daemon
+    - HTTP API
+    - `buildx`
+    - `runc`
+    - `containerd`
+  - Network types
     - bridge
     - none
     - host
@@ -254,7 +254,7 @@
   - crio
   - oci
   - runc
-  - worklaod
+  - workload
     - deployment, sts, daemonset (a)
     - sts features (b)
       - naming
@@ -301,10 +301,10 @@
 ### Automation
 
 - concepts:
-  - reusable modules (roles, scripts, ...)
+  - Reusable modules (roles, scripts, ...)
   - Idempotency (know the concept in rest but not in ansible)
-  - remote parallel execution
-  - inventory and discovery
+  - Remote parallel execution
+  - Inventory and discovery
   - DSL
 - Tools:
   - Ansible
