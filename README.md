@@ -13,9 +13,9 @@
 
 ### Golang
 
-- syntax go tour XXX
-  - [https://go.dev/tour/welcome/1](https://go.dev/tour/welcome/1)
-  - [https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ](https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ)
+- Syntax
+  - <https://go.dev/tour/welcome/1>
+  - <https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ>
 - Concurrency (b)
   - Goroutines (b)
   - Mutex (b)
