@@ -72,7 +72,8 @@
 
 ### Network
 
-- To read: Networking warrior(first 12 chapters), Networking for Systems Administrators (IT Mastery)
+- 📖 Network Warrior (first 12 chapters)
+- 📖 Networking for Systems Administrators (IT Mastery)
 - [The complete flow of entering a URL in your browser](https://github.com/alex/what-happens-when#tls-handshake)
 - OSI layers (a)
   - L1:
