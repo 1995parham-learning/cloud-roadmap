@@ -69,26 +69,6 @@
 - Jaeger tracing (d)
 - Prometheus Exporter SDK
 
-### Kubernetes
-
-- Kubernetes SDK
-  - [https://github.com/kubernetes/apimachinery](https://github.com/kubernetes/apimachinery)
-  - [https://github.com/kubernetes/client-go](https://github.com/kubernetes/client-go)
-  - informers
-- Controller / Operator
-  - controller-runtime
-  - kubebuilder
-  - operator-sdk
-  - reconcile loop
-  - k8s error checking
-  - Finalizer
-  - status
-  - printable columns
-  - default values / validations (tags)
-- Admission / Mutation Webhook
-- tests
-  - k8s envtest
-
 ### Network
 
 - To read: Networking warrior(first 12 chapters), Networking for Systems Administrators (IT Mastery)
@@ -97,10 +77,9 @@
   - L1:
     - hub
   - L2:
-    - mac (a)
-    - vlan (b)
-      - [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/) \-> such a brain friendly way of learning the fundamentals of network.
-      -
+    - MAC (a)
+    - vLAN (b)
+      - [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/) -> such a brain friendly way of learning the fundamentals of network.
     - vrrp (b)
     - arp (a)
   - L3
@@ -193,7 +172,6 @@
   - UID, GID
   - SELinux ls -Z
 - Docker
-
   - Great resource for introduction to the container underlying concepts-> [Cgroups, namespaces, and beyond: what are containers made from?](https://www.youtube.com/watch?v=sK5i-N34im8)
   - [How containers work by Julia Evans](http://library.lol/main/7DD600362F75F773B82D0736D18D383B)
   - dockerfile (a)
@@ -221,132 +199,148 @@
     - how compose works
     - dns servicek
 
-- Kubernetes
-  - OKD:
-    - [CoreOS](https://cloud.redhat.com/blog/red-hat-enterprise-linux-coreos-customization)
-  - [The complete flow of creating a deployment](https://github.com/jamiehannaford/what-happens-when-k8s)
-  - Book: Kubernetes in action by Marka Luksa ( Part3 - especially chapter 11 understanding kubernetes internals )
-  - components (a)
-    - kubelet, scheduler, kube-proxy
-  - api
-    - api server
-      - authN
-      - authZ
-      - mutation
-        - what is it (b)
-        - objects in k8s (c)
-        - writing a custom webhook (c)
-      - admission
-        - what is it (b)
-        - object in k8s (c)
-        - writing a custom webhook (c)
-      - etcd watch
-      - api server watch
-      - controller pattern
-      - scheduling pipeline
-      - extension:
-        - AA
-        - CRD
-  - etcd:
-    - raft / consensus
-    - watch
-    - persistence
-    - why not redis?
-  - cri
-    - kubelet watch
-    - cri grpc call
-    - crio
-    - oci
-    - runc
-    - worklaod
-      - deployment, sts, daemonset (a)
-      - sts features (b)
-        - naming
-        - pvc per pod
-      - daemonset:
-        - no count
-        - not drain
-        - even if node restart ??
-    - probe
-      - liveness, readiness (a)
-      - startup probe (b)
-  - network:
-    - kube-proxy, service
-      - service (headless/none, clusterip, loadbalancer, node port, external name) (a)
-      - endpoint (b)
-      - endpointslice  (c)
-      - kube proxy iptables chains
-    - cni (b)
-      - cilium
-    - ingress controller (b)
-    - dns
-      - kubelet dns, dnsPolicy
-      - coredns: learning coredns book
-    - life of a packet North south
-    - life of a packet East West
-  - Csi:
-    - [Container Storage interface standard](https://github.com/container-storage-interface/spec/blob/master/spec.md) - this is the reference and standard not a very good resource for a newbie
-    - [How to write a Container Storage Interface (CSI) plugin](https://arslan.io/2018/06/21/how-to-write-a-container-storage-interface-csi-plugin/) - A thorough resource with easy to understand explanation
-    - Concepts:
-      - pv
-      - pvc
-      - provisioner
-      - driver
-      - a/d controller
-      - csi attacher/resizer/snapshotter
-      - Life of a PVC
-      - kubelet fsGroup policy
-      - kubelet selinux relabling
-      - inline csi ©
-- automation:
-  - concepts:
-    - reusable modules (roles, scripts, ...)
-    - idempotency (know the concept in rest but not in ansible)
-    - remote parallel execution
-    - inventory and discovery
-    - DSL
-  - Tools:
-    - Ansible
-      - roles (b)
-      - playbook (a)
-      - tasks (a)
-      - inventory (a)
-      - group vars(b)
-      - env (a)
-      - ansible.cfg (b)
-      - callbacks (d)
-      - plugins (c)
-      - dynamic inv (c)
-      - writing a module (d)
-      - ansible-galaxy (c)
-      - raw (c)
-      - handlers (c)
-      - jinja (b)
-    - Terraform (Terraform up and running)
-      - state (a)
-      - storage backend state (b)
-      - modules (b)
-      - locals, vs variables (b)
-      - state lock (b)
-      - production/staging (b)
-      - secrets (b)
-      - custom providers (c)
-      - writing providers (d)
-    - basic: saltstack, puppet
-- openshift
-  - Console
-    - Console customization
-    - Dynamic plugins
+### Kubernetes
 
-[https://www.youtube.com/watch?v=55wgEmEY1o0](https://www.youtube.com/watch?v=55wgEmEY1o0)
+- Kubernetes SDK
+  - [https://github.com/kubernetes/apimachinery](https://github.com/kubernetes/apimachinery)
+  - [https://github.com/kubernetes/client-go](https://github.com/kubernetes/client-go)
+  - informers
+- Controller / Operator
+  - controller-runtime
+  - kubebuilder
+  - operator-sdk
+  - reconcile loop
+  - k8s error checking
+  - Finalizer
+  - status
+  - printable columns
+  - default values / validations (tags)
+- Admission / Mutation Webhook
+- tests
+  - k8s envtest
+- OKD:
+  - [CoreOS](https://cloud.redhat.com/blog/red-hat-enterprise-linux-coreos-customization)
+- [The complete flow of creating a deployment](https://github.com/jamiehannaford/what-happens-when-k8s)
+- Book: Kubernetes in action by Marka Luksa ( Part3 - especially chapter 11 understanding kubernetes internals )
+- components (a)
+  - kubelet, scheduler, kube-proxy
+- api
+  - api server
+    - authN
+    - authZ
+    - mutation
+      - what is it (b)
+      - objects in k8s (c)
+      - writing a custom webhook (c)
+    - admission
+      - what is it (b)
+      - object in k8s (c)
+      - writing a custom webhook (c)
+    - etcd watch
+    - api server watch
+    - controller pattern
+    - scheduling pipeline
+    - extension:
+      - AA
+      - CRD
+- etcd:
+  - raft / consensus
+  - watch
+  - persistence
+  - why not redis?
+- cri
+  - kubelet watch
+  - cri grpc call
+  - crio
+  - oci
+  - runc
+  - worklaod
+    - deployment, sts, daemonset (a)
+    - sts features (b)
+      - naming
+      - pvc per pod
+    - daemonset:
+      - no count
+      - not drain
+      - even if node restart ??
+  - probe
+    - liveness, readiness (a)
+    - startup probe (b)
+- network:
+  - kube-proxy, service
+    - service (headless/none, clusterip, loadbalancer, node port, external name) (a)
+    - endpoint (b)
+    - endpointslice (c)
+    - kube proxy iptables chains
+  - cni (b)
+    - cilium
+  - ingress controller (b)
+  - dns
+    - `kubelet` dns, dnsPolicy
+    - CoreDNS: learning CoreDNS book
+  - life of a packet North south
+  - life of a packet East West
+- CSI:
+  - [Container Storage interface standard](https://github.com/container-storage-interface/spec/blob/master/spec.md) - this is the reference and standard not a very good resource for a newbie
+  - [How to write a Container Storage Interface (CSI) plugin](https://arslan.io/2018/06/21/how-to-write-a-container-storage-interface-csi-plugin/) - A thorough resource with easy to understand explanation
+  - Concepts:
+    - pv
+    - pvc
+    - provisioner
+    - driver
+    - a/d controller
+    - csi attacher/resizer/snapshotter
+    - Life of a PVC
+    - `kubelet` fsGroup policy
+    - `kubelet` selinux re-labeling
+    - inline csi (c)
+- Console
+  - Console customization
+  - Dynamic plugins
 
-- Ceph
+### Automation
 
-[https://www.youtube.com/watch?v=7I9uxoEhUdY](https://www.youtube.com/watch?v=7I9uxoEhUdY)
+- concepts:
+  - reusable modules (roles, scripts, ...)
+  - Idempotency (know the concept in rest but not in ansible)
+  - remote parallel execution
+  - inventory and discovery
+  - DSL
+- Tools:
+  - Ansible
+    - roles (b)
+    - playbook (a)
+    - tasks (a)
+    - inventory (a)
+    - group vars(b)
+    - env (a)
+    - ansible.cfg (b)
+    - callbacks (d)
+    - plugins (c)
+    - dynamic inventory (c)
+    - writing a module (d)
+    - ansible-galaxy (c)
+    - raw (c)
+    - handlers (c)
+    - jinja (b)
+  - Terraform (Terraform up and running)
+    - state (a)
+    - storage backend state (b)
+    - modules (b)
+    - locals, vs variables (b)
+    - state lock (b)
+    - production/staging (b)
+    - secrets (b)
+    - custom providers (c)
+    - writing providers (d)
+  - basic: [saltstack](https://github.com/saltstack/salt), puppet
 
--       *   ceph cookbook
+### Openstack and Ceph
+
+- [https://www.youtube.com/watch?v=55wgEmEY1o0](https://www.youtube.com/watch?v=55wgEmEY1o0)
+- Ceph [https://www.youtube.com/watch?v=7I9uxoEhUdY](https://www.youtube.com/watch?v=7I9uxoEhUdY)
+- Ceph cookbook
 - Openstack
-
   - Networking:
     - OVS
       - [Networking in too much detail](https://www.rdoproject.org/networking/networking-in-too-much-detail/#the-players)
@@ -356,36 +350,37 @@
   - Mastering openstack by Omar Khedmer
     - Chapter12 - openstack benchmarking and performance tunning (describes using Rally for benchmarking control plane -especially the API- and it will also introduce Shaker for benchmarking data plane -the internal and external connection of instances-)
 
-- observability
-  - monitoring
-    - prometheus
-      - how it works
-      - scarping
-      - SD
-      - dynamic metrics/short lived
-      - promQL
-        - many-to-many matching on()
-        - group_lef
-        - irate
-      - recording rule
-      - alerting rule
-    - alertmanager
-    - prometheus HA
-      - federation
-      - thanos
-        - querier
-        - side-car
-    - exporters
-      - kind of metrics
-        - gauge
-        - counter
+### Observability
+
+- Monitoring
+  - Prometheus
+    - how it works
+    - scarping
+    - SD
+    - dynamic metrics/short lived
+    - promQL
+      - many-to-many matching on()
+      - group_lef
+      - irate
+    - recording rule
+    - alerting rule
+  - Alertmanager
+  - prometheus HA
+    - federation
+    - Thanos
+      - querier
+      - side-car
+  - Exporters
+    - kind of metrics
+      - gauge
+      - counter
 - Logging
   - [Loki](https://grafana.com/docs/loki/latest/)
     - promtail
     - logQL
-  - efk
-    - fluentbit
-    - fluented
+  - EFK
+    - Fluentbit
+    - Fluented
       - plugins
         - input
         - output
