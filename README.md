@@ -85,7 +85,7 @@
     - vLAN (b)
       - [Computer networking introduction: heavily visualized](https://iximiuz.com/en/posts/computer-networking-101/) -> such a brain friendly way of learning the fundamentals of network.
     - vrrp (b)
-    - arp (a)
+    - ARP (a)
   - L3
     - sub-netting, gw (a)
     - ip classes (A,B,C) private/public (a)
