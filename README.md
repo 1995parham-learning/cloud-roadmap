@@ -24,21 +24,21 @@
   - Channels (b)
   - Context (b)
 - HTTP
-  - Client (net/http) (b)
-    - request
-      - set header
-      - set query param
-      - custom client
-        - custom timeout
-        - httptrace
-        - custom transport
-          - skip tls verify
-      - dump response
+  - Client (`net/http`) (b)
+    - Request
+      - Setting/Getting Header
+      - Setting/Getting Query Param
+      - Custom Client
+        - Custom Timeout
+        - HTTP-trace
+        - Custom transport
+          - Skip TLS verify
+      - Dump response
   - Server
-    - net/http
-    - mux
-    - [echo](https://echo.labstack.com/)
-      - Advanced mux
+    - `net/http`
+    - `gorilla/mux`
+    - [`labstack/echo`](https://echo.labstack.com/)
+      - Advanced request multiplexing
       - Group register
       - Middlewares
         - JWT
