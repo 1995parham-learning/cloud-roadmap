@@ -7,7 +7,9 @@
 - c: Advanced topic
 - d: Expert
 
-<https://www.karanpratapsingh.com/courses/system-design>
+## Courses
+
+- <https://www.karanpratapsingh.com/courses/system-design>
 
 ## Concepts
 
