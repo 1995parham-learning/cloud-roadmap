@@ -24,7 +24,7 @@
   - Channels (b)
   - Context (b)
 - HTTP
-  - client net/http (b)
+  - Client (net/http) (b)
     - request
       - set header
       - set query param
