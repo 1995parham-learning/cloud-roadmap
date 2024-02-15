@@ -2,10 +2,10 @@
 
 ## Difficulty
 
-- a: Basic, concept (a 1st year CS student can learn )
-- b: Intermediate (a fresh CS graduate can learn)
-- c: Advanced topic
-- d: Expert
+- A: Basic, concept (a 1st year CS student can learn)
+- B: Intermediate (a fresh CS graduate can learn)
+- C: Advanced topic
+- D: Expert
 
 ## Courses
 
@@ -18,16 +18,16 @@
 - Syntax
   - <https://go.dev/tour/welcome/1>
   - <https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ>
-- Concurrency (b)
-  - Goroutines (b)
-  - Mutex (b)
-  - Channels (b)
-  - Context (b)
+- 🧵 Concurrency (B)
+  - Goroutines (B)
+  - Mutex (B)
+  - Channels (B)
+  - Context (B)
 - HTTP
-  - Client (`net/http`) (b)
+  - Client (`net/http`) (B)
     - Request
       - Setting/Getting Header
-      - Setting/Getting Query Param
+      - Setting/Getting Query Parameters
       - Custom Client
         - Custom Timeout
         - HTTP-trace
@@ -44,22 +44,23 @@
         - JWT
         - Prometheus
 - JSON marshal/unmarshal
-- Config Management (viper/koanf/pflag)
-  - env
-  - yaml/json/toml
+- Config Management ([`spf13/viper`](https://github.com/spf13/viper)/[`koanf`](https://github.com/knadh/koanf)/[`spf13/pflag`](https://github.com/spf13/pflag))
+  - Environment Variables
+  - YAML/JSON/TOML
 - CLI (cobra)
-  - subcommands
+  - sub-commands
   - flags
 - gRPC (d)
   - Protobuf
-  - code generation
+  - Code generation (which should be communicated well)
   - interceptors
-    - prometheus
+    - Prometheus
     - log
 - Databases
-  - [gorm](https://gorm.io/)
-  - [atlas](https://atlasgo.io/)
-  - client redis
+  - [`gorm`](https://gorm.io/)
+  - [`atlas`](https://atlasgo.io/)
+  - [`redis/go-redis`](https://github.com/redis/go-redis)
+  - [`redis/rueidis`](https://github.com/redis/rueidis)
   - client mysql
   - client mongo
   - client etcd
@@ -67,8 +68,8 @@
   - Unit testing
   - [testify](https://github.com/stretchr/testify)
   - BDD
-    - [gingko](https://github.com/onsi/ginkgo)
-    - [gomega](https://github.com/onsi/gomega)
+    - [`gingko`](https://github.com/onsi/ginkgo)
+    - [`gomega`](https://github.com/onsi/gomega)
 - Jaeger tracing (d)
 - Prometheus Exporter SDK
 
